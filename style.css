@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -12,26 +14,30 @@
 body {
     max-width: 900px;
     margin: auto;
-    box-shadow: 0vw 0vh 0vw 100vw #b0b0b0;
-    background-color: #545454;
-    color: #fff;
+    background-color: #b0b0b0;
 }
 
 
 
 .container {
+    margin: 2vw auto;
     display: grid;
-    grid-template-columns: 250px 1fr; /* ліва фіксована, права гнучка */
+    grid-template-columns: 35% 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
-      "header header"
-      "left right";
+        "header header"
+        "left right";
+    background-color: #545454;
+    color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 header {
+    box-sizing: border-box;
     background-color: #696464;
     grid-area: header;
-    place-items: center;
+    text-align: center;
     padding: 2vh 0;
 }
 
@@ -40,12 +46,16 @@ header {
 }
 
 .sidebar_holder {
-    /* display: grid;
-    place-items: center; */
-    padding: 5vh 10vw 5vh 5vw;
+    padding: 5% 10% 5% 5%;
+    text-align: center;
 }
 
 .main {
     grid-area: right;
     background-color: #1f1f1f;
+}
+
+.main_holder {
+    padding: 5% 10% 5% 5%;
+    text-align: center;  
 }
